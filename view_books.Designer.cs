@@ -41,19 +41,36 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Title = new System.Windows.Forms.TextBox();
+            this.author = new System.Windows.Forms.TextBox();
+            this.publication = new System.Windows.Forms.TextBox();
+            this.price = new System.Windows.Forms.TextBox();
+            this.quantity = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.purchaseDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(269, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(220, 40);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(519, 398);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(817, 362);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
@@ -169,11 +186,148 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Enter publication";
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.purchaseDate);
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.quantity);
+            this.panel4.Controls.Add(this.price);
+            this.panel4.Controls.Add(this.publication);
+            this.panel4.Controls.Add(this.author);
+            this.panel4.Controls.Add(this.Title);
+            this.panel4.Location = new System.Drawing.Point(18, 444);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(567, 286);
+            this.panel4.TabIndex = 4;
+            this.panel4.Visible = false;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // Title
+            // 
+            this.Title.Location = new System.Drawing.Point(23, 40);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(182, 20);
+            this.Title.TabIndex = 0;
+            // 
+            // author
+            // 
+            this.author.Location = new System.Drawing.Point(23, 122);
+            this.author.Name = "author";
+            this.author.Size = new System.Drawing.Size(182, 20);
+            this.author.TabIndex = 1;
+            // 
+            // publication
+            // 
+            this.publication.Location = new System.Drawing.Point(23, 202);
+            this.publication.Name = "publication";
+            this.publication.Size = new System.Drawing.Size(182, 20);
+            this.publication.TabIndex = 2;
+            // 
+            // price
+            // 
+            this.price.Location = new System.Drawing.Point(322, 122);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(182, 20);
+            this.price.TabIndex = 4;
+            // 
+            // quantity
+            // 
+            this.quantity.Location = new System.Drawing.Point(322, 202);
+            this.quantity.Name = "quantity";
+            this.quantity.Size = new System.Drawing.Size(182, 20);
+            this.quantity.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(24, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Title:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(24, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "author:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(24, 186);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "publication:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(319, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "purchase date:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label8.Location = new System.Drawing.Point(319, 106);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "price:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(319, 186);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "quantity:";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(226, 245);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 23);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Save Changes";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // purchaseDate
+            // 
+            this.purchaseDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.purchaseDate.Location = new System.Drawing.Point(322, 40);
+            this.purchaseDate.Name = "purchaseDate";
+            this.purchaseDate.Size = new System.Drawing.Size(182, 20);
+            this.purchaseDate.TabIndex = 13;
+            this.purchaseDate.Value = new System.DateTime(2023, 11, 17, 0, 0, 0, 0);
+            // 
             // view_books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1049, 756);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -189,6 +343,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -208,5 +364,19 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox author;
+        private System.Windows.Forms.TextBox Title;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox quantity;
+        private System.Windows.Forms.TextBox price;
+        private System.Windows.Forms.TextBox publication;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker purchaseDate;
     }
 }

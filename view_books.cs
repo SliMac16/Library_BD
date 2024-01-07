@@ -22,7 +22,7 @@ namespace Library_BD
 
         private void view_books_Load(object sender, EventArgs e)
         {
-            
+            display();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -111,6 +111,92 @@ namespace Library_BD
                 {
                     MessageBox.Show("no books found");
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            panel4.Visible = true;
+            int i;
+            i =Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM books where id=" + i + "";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                
+                foreach(DataRow row in dt.Rows) 
+                { 
+                    Title.Text = row["book_title"].ToString();
+                    author.Text = row["book_author"].ToString();
+                    publication.Text = row["book_publication"].ToString();
+                    purchaseDate.Value = Convert.ToDateTime(row["book_purchaseDate"].ToString());
+                    price.Text = row["book_price"].ToString();
+                    quantity.Text = row["book_quantity"].ToString();
+
+                }
+
+                con.Close();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int i;
+            i = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
+            try 
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                //date nie dziala
+                cmd.CommandText = "UPDATE books set book_title='" + Title.Text + "',book_author='" + author.Text + "',book_publication='" + publication.Text + "',book_purchaseDate='" + purchaseDate.Value + "',book_price='"+ price.Text + "',book_quantity='"+ quantity.Text + "' WHERE id=" + i + " ";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Updated");
+                panel4.Visible = false;
+                display();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void display()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM books";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+                con.Close();
+                
             }
             catch (Exception ex)
             {
