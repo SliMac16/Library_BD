@@ -66,14 +66,17 @@ namespace Library_BD
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+            //addNewBookToolStripMenuItem.Visible = addNewBookToolStripMenuItem.Checked;
+
+           
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            //statusStrip.Visible = addNewBookToolStripMenuItem.Checked;
+            
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +105,18 @@ namespace Library_BD
             {
                 childForm.Close();
             }
+        }
+
+        private void addNewBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            add_books ab = new add_books();
+            ab.Show();
+        }
+
+        private void viewBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            view_books vb = new view_books();
+            vb.Show();
         }
     }
 }
