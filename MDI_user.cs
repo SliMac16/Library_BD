@@ -118,5 +118,17 @@ namespace Library_BD
             view_books vb = new view_books();
             vb.Show();
         }
+
+        private void addStudentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            add_student newStudent = new add_student();
+            newStudent.Show();
+        }
+
+        private void viewStudentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            view_student viewStudent = new view_student();
+            viewStudent.Show();
+        }
     }
 }
