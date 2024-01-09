@@ -25,7 +25,7 @@ namespace Library_BD
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText =  "INSERT INTO books values('"+ textBox1.Text +"','" + textBox2.Text + "','" + textBox3.Text + "','" + dateTimePicker1.Value + "','" + textBox5.Text + "','" + textBox6.Text + "')";
+            cmd.CommandText =  "INSERT INTO books values('"+ textBox1.Text +"','" + textBox2.Text + "','" + textBox3.Text + "','" + dateTimePicker1.Value + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox6.Text + "')";
             cmd.ExecuteNonQuery();
 
             con.Close();

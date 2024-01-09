@@ -130,5 +130,11 @@ namespace Library_BD
             view_student viewStudent = new view_student();
             viewStudent.Show();
         }
+
+        private void issueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            issue_book issue_Book = new issue_book();
+            issue_Book.Show();
+        }
     }
 }
